@@ -31,8 +31,8 @@ module.exports.createUser = (req, res, next) => {
 };
 
 module.exports.editDataUser = (req, res, next) => {
-  const { name, about } = req.body;
-  User.findByIdAndUpdate(req.user._id, { name, about }, { new: 'true', runValidators: true })
+  const { name, email } = req.body;
+  User.findByIdAndUpdate(req.user._id, { name, email }, { new: 'true', runValidators: true })
     .orFail()
     .then((user) => res.status(200).send(user))
     .catch((err) => {

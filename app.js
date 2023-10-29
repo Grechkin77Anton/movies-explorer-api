@@ -7,9 +7,9 @@ const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const { errorHandler } = require('./middlewares/error-handler');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
-const { MONGO_DB } = require('./utils/config');
+// const { MONGO_DB } = require('./utils/config');
 
-const { PORT = 3000 } = process.env;
+const { PORT = 3000, MONGO_DB = 'mongodb://127.0.0.1:27017/bitfilmsdb' } = process.env;
 const app = express();
 
 app.use(cors());
