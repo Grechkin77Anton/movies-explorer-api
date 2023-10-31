@@ -13,7 +13,7 @@ const userSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    require: [true, 'Поле обязательно для заполнения'],
+    required: [true, 'Поле обязательно для заполнения'],
     unique: true,
     validate: {
       validator: function checkEmail(email) {
@@ -25,7 +25,7 @@ const userSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-    require: [true, 'Поле обязательно для заполнения'],
+    required: [true, 'Поле обязательно для заполнения'],
     select: false,
   },
 }, { versionKey: false });
